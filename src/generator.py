@@ -16,7 +16,7 @@ def create_event(event_name, nr_events):
     events = []
     dates = []
     for i in range(nr_events*2):
-        dates.append(facker.date_time_between(start_date='-60d', end_date='now'))
+        dates.append(round(random.uniform(0.0, 300.0),2))
     dates.sort()
     for i in range(nr_events):
         events.append((event_name, [dates[i*2],dates[i*2+1]]))
@@ -29,7 +29,6 @@ def create_sequence(list_name, min_events, max_events):
         events = create_event(name, number_events)
         for event in events:
             sequence.append(event)
-    random.shuffle(sequence)
     return sequence
 
 
@@ -41,4 +40,7 @@ def create_multiple_sequences(list_name, min_events, max_events, nr_sequences, w
         with open("data.json", "w") as i :
             json.dump(all_sequences, i, cls=DateTimeEncoder)
     return all_sequences
+
 #Usage create_multiple_sequences(['A', 'B', 'C'], 1, 10, 3, True)
+
+#create_multiple_sequences(['A', 'B', 'C'], 1, 10, 3, True)
