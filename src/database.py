@@ -12,7 +12,7 @@ def format_db(dict_json):
     
 
 def create_db_seq(data):
-    i = 1
+    i = 0
     seq_time = dict()
     for secuence in data:
         for event in secuence:
