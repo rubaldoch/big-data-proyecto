@@ -24,7 +24,7 @@ def create_db_seq(data):
 
             seq_time[event[0]][(i)].append([event[1][0], event[1][1]])
         i += 1
-    format_db(seq_time)
+    seq_time=format_db(seq_time)
     return seq_time
 
 
@@ -55,6 +55,7 @@ def create_database(df_data):
     return df_data
     pass
 
-f = open('data.json')
+f = open('events.json')
 data = json.load(f)
 var = create_db_seq(data)
+print(var)
