@@ -1,4 +1,8 @@
+import json
+
 from dhpg import DHPG
+from database import create_db_seq
+
 
 d_ev = [
     ["A", {
@@ -92,6 +96,10 @@ d_ev = [
     }]
 ]
 
+
+f = open('data.json')
+data = json.load(f)
+var = create_db_seq(data)
 
 dphg = DHPG(d_ev, 5, 4)
 seq = dphg.mine_pattern()
