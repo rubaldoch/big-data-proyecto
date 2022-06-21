@@ -1,7 +1,6 @@
 import json
 
 from dhpg import DHPG
-from database import create_db_seq
 from generator import create_multiple_sequences
 
 
@@ -97,13 +96,12 @@ d_ev = [
     }]
 ]
 
-# Usage create_multiple_sequences(['A', 'B', 'C'], 1, 10, 3, True)
+#Usage create_multiple_sequences(['A', 'B', 'C'], 1, 10, 3, True)
 create_multiple_sequences(['A', 'B', 'C'], 1, 10, 3, True)
 
 f = open('data.json')
-data = json.load(f)
-var = create_db_seq(data)
+d_seq = json.load(f)
 
-dphg = DHPG(d_ev, 5, 4)
+dphg = DHPG(d_seq, 5, 4)
 seq = dphg.mine_pattern()
 [print(s.get_idx()) for s in seq]

@@ -40,3 +40,4 @@ def create_multiple_sequences(list_name, min_events, max_events, nr_sequences, w
         with open("data.json", "w") as i :
             json.dump(all_sequences, i, cls=DateTimeEncoder)
     return all_sequences
+

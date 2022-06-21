@@ -9,24 +9,6 @@ def format_db(dict_json):
     for key in dict_json:
         ans.append([key, dict_json[key]])
     return ans
-    
-
-def create_db_seq(data):
-    i = 1
-    seq_time = dict()
-    for secuence in data:
-        for event in secuence:
-            if not event[0] in seq_time:
-                seq_time[event[0]] = {}
-
-            if not (i) in seq_time[event[0]]:
-                seq_time[event[0]][(i)] = list()
-
-            seq_time[event[0]][(i)].append([event[1][0], event[1][1]])
-        i += 1
-    seq_time=format_db(seq_time)
-    return seq_time
-
 
 def create_df(data):
     sc = SparkSession.builder.getOrCreate()
@@ -45,17 +27,9 @@ def create_df(data):
 def create_database(df_data):
     df_data = df_data.orderBy([ "Event", "Sequence", "Start", "End"],ascending = [ True, True,  True, True])
     df_collect = df_data.collect()
-    db_created = []
-    event_data = []
     element = ""
     for row in df_collect:
         if element != row["Event"]:
             element = row["Event"]
         
     return df_data
-    pass
-
-f = open('events.json')
-data = json.load(f)
-var = create_db_seq(data)
-print(var)
