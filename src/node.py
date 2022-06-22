@@ -5,10 +5,10 @@ class Node:
         self.bitmap = bitmap
         self.support = support
         self.confidence = confidence
-    
+
     def get_idx(self):
         return self.idx
-    
+
     def get_bitmap(self):
         return self.bitmap
 

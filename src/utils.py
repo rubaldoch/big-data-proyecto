@@ -8,19 +8,24 @@ def build_bitmap(x, n_seq):
         bitmap[key] = 1
     return x + [bitmap]
 
+
 def get_support(bitmap):
     return sum(bitmap)/len(bitmap)
+
 
 def support_event(x):
     return get_support(x[2])
 
+
 def confidence_event(x, y):
     pass
+
 
 def build_node1(x):
     support = support_event(x)
     condidence = 1
     return Node([x[0]], np.array(x[2]), support, condidence)
+
 
 def build_nodek(x, y):
     idx = x.get_idx() + y.get_idx()
