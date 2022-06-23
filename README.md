@@ -5,3 +5,18 @@
 - Roosevelt
 - Stephano
 - Victor
+
+## ¿Como ejecutar el proyecto?
+
+- Crear un virtualenv en python
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+- Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
