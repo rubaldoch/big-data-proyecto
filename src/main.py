@@ -1,10 +1,10 @@
 from dhpg import DHPG
-from generator import Generator
+from generator import TSD
 
 
 if __name__ == '__main__':
-    gen = Generator(['A', 'B', 'C'], 1, 10, 3, True)
-    d_seq = gen.generate()
+    tsd = TSD(['A', 'B', 'C'], 1, 10, 3, True)
+    d_seq = tsd.generate()
 
     dphg = DHPG(d_seq, 5, 4)
     seq = dphg.mine_pattern().collect()
