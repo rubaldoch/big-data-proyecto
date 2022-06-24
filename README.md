@@ -20,3 +20,10 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+- Ejecutar el proyecto
+  
+```bash
+cd src/
+python3 main.py
+```
