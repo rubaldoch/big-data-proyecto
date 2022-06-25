@@ -41,7 +41,7 @@ class DHPG:
             and build the bitmap for each row in the event database.
 
         Args:
-            n_seq (int): temporal sequence database
+            n_seq (int): number of sequences
 
         """
         self.d_ev = self.d_ev.zipWithIndex()
