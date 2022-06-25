@@ -1,14 +1,13 @@
-import json
-
 from dhpg import DHPG
-from generator import create_multiple_sequences
+from generator import TSD
 
-# Usage create_multiple_sequences(['A', 'B', 'C'], 1, 10, 3, True)
-create_multiple_sequences(['A', 'B', 'C'], 1, 10, 3, True)
 
-f = open('data.json')
-d_seq = json.load(f)
+if __name__ == '__main__':
+    # Generate temporal event sequence
+    tsd = TSD(['A', 'B', 'C'], 1, 10, 3, True)
+    d_seq = tsd.generate()
 
-dphg = DHPG(d_seq, 5, 4)
-seq = dphg.mine_pattern().collect()
-[print(s.get_idx()) for s in seq]
+    # Mining 2-Frequent events
+    dphg = DHPG(d_seq, 3, 4)
+    seq = dphg.mine_pattern().collect()
+    [print(s.get_idx()) for s in seq]
