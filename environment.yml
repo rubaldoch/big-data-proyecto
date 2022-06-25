@@ -1,0 +1,8 @@
+name: proyecto-bigdata-2022-1 
+channels:
+  - defaults
+dependencies:
+- python=3.6
+- Faker
+- numpy
+- pyspark
