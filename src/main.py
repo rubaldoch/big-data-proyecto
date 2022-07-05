@@ -8,6 +8,5 @@ if __name__ == '__main__':
     d_seq = tsd.generate()
 
     # Mining 2-Frequent events
-    dphg = DHPG(d_seq, 3, 4)
-    seq = dphg.mine_pattern().collect()
-    [print(s.get_idx()) for s in seq]
+    dphg = DHPG(d_seq, 3, 4, verbose=True)
+    seq = dphg.mine_pattern()

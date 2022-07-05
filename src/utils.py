@@ -29,6 +29,9 @@ def get_support(bitmap):
     
     Args:
         bitmap(list): an event bitmap 
+    
+    Returns:
+        float: support value
 
     """
     return sum(bitmap)/len(bitmap)
@@ -62,8 +65,8 @@ def build_node1(x):
 
     """
     support = support_event(x)
-    condidence = 1
-    return Node([x[0]], np.array(x[2]), support, condidence)
+    confidence = 1
+    return Node([x[0]], np.array(x[2]), support, confidence)
 
 
 def build_nodek(x, y):
