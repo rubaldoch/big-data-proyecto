@@ -5,9 +5,9 @@ class Node:
 
         Args:
             idx (list): event(s) name index. Ej. 'A', 'AB', 'ABC', ...
-            bitmap (int): bitmap value of the event
-            support (int): support value
-            confidence (int): confidence value
+            bitmap (array): bitmap value of the event
+            support (float): support value
+            confidence (float): confidence value
 
         """
         self.idx = idx
@@ -26,3 +26,6 @@ class Node:
 
     def get_confidence(self):
         return self.confidence
+
+    def show(self):
+        print(self.idx,"|",self.bitmap,"|",self.support,"|",self.confidence)
