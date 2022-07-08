@@ -1,7 +1,9 @@
 import random
 import json
 import datetime
+from faker import Faker
 
+faker = Faker()
 class DateTimeEncoder(json.JSONEncoder):
     def default(self, z):
         if isinstance(z, datetime.datetime):
@@ -22,7 +24,7 @@ class TSD:
             write_to_file (bool): save TDS to data.json file
 
         """
-        self.event_names_list = event_names_list
+        self.event_names_list = event_names_list if not(event_names_list) or len(event_names_list) else faker.words(26)
         self.min_event_ocurr = min_event_ocurr
         self.max_event_ocurr = max_event_ocurr
         self.number_of_sequences = number_of_sequences

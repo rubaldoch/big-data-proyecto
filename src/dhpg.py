@@ -59,11 +59,11 @@ class DHPG:
         
         """
         print("Preprocesamiento:")
-        print("Exec Time:", round(self.metricas[0][0],2), "ms\t", "CPU Time:", round(self.metricas[0][1],2), "ms\t")
-        print("\nMine Single Freq Event:")
-        print("Exec Time:", round(self.metricas[1][0],2), "ms\t", "CPU Time:", round(self.metricas[1][1],2), "ms\t")
-        print("\nMine Frequent 2-Event:")
-        print("Exec Time:", round(self.metricas[2][0],2), "ms\t", "CPU Time:", round(self.metricas[2][1],2), "ms\t")
+        print("Exec Time:", round(self.metricas[0][0],2), "ms\t", "CPU Time:", round(self.metricas[0][1],2), "ms\n")
+        print("Mine Single Freq Event:")
+        print("Exec Time:", round(self.metricas[1][0],2), "ms\t", "CPU Time:", round(self.metricas[1][1],2), "ms\n")
+        print("Mine Frequent 2-Event:")
+        print("Exec Time:", round(self.metricas[2][0],2), "ms\t", "CPU Time:", round(self.metricas[2][1],2), "ms\n")
 
     def __preprocessing(self, n_seq):
         """ Converts the temporal sequence database 'd_seq' into an event database 'd_ev'
